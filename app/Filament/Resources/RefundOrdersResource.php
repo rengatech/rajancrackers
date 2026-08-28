@@ -136,7 +136,7 @@ class RefundOrdersResource extends Resource
     public static function getRelations(): array
     {
         return [
-            ItemsRelationManager::class,
+            RelationManagers\ItemsRelationManager::class,
         ];
     }
 

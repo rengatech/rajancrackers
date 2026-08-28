@@ -6,7 +6,7 @@ use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
-use Filament\Resources\ReletionManagers\RelationManager;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Actions;
 use Filament\Tables;
 use Filament\Tables\Table;
