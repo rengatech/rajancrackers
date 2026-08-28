@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\RefundOrdersResource\ReletionManagers;
+namespace App\Filament\Resources\RefundOrdersResource\RelationManagers;
 
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
-use Filament\Resources\ReletionManagers\ReletionManager;
+use Filament\Resources\ReletionManagers\RelationManager;
 use Filament\Actions;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ItemsReletionManager extends ReletionManager
+class ItemsRelationManager extends RelationManager
 {
     protected static string $relationship = 'items';
 
