@@ -221,9 +221,15 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
                     @click="toggleCategory(category.id)"
                     class="flex w-full items-center justify-between bg-brand-red px-4 py-3 sm:px-6 text-left transition-colors hover:bg-brand-red-hover"
                 >
-                    <h2 class="font-heading text-base font-bold text-white sm:text-lg">
-                        {{ category.category }}
-                    </h2>
+                   <h2 class="font-heading text-base font-bold text-white sm:text-lg">
+                {{ category.category }}
+                   </h2>
+
+              <span v-if="category.tamil_name" class="hidden sm:block text-center font-heading text-sm font-semibold text-white sm:text-base">
+               {{ category.tamil_name }}
+                 </span>
+                 <span v-else class="hidden sm:block"></span>
+
                     <div class="flex items-center gap-2">
                         <span class="rounded-full bg-white px-2.5 py-0.5 text-xs font-bold text-brand-red">
                             {{ category.products.length }} items
