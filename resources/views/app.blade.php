@@ -55,23 +55,23 @@
         "@type": "Store",
         "name": "Rajan Crackers",
         "description": "Buy crackers online from Sivakasi at wholesale and retail prices. Sparklers, aerial shots, gift boxes, green crackers and more with all India delivery.",
-        "url": "https://madhucrackers.com",
-        "logo": "https://madhucrackers.com/assets/img/rajan.logo.jpg",
-        "image": "https://madhucrackers.com/assets/img/rajan.logo.jpg",
+        "url": "https://rajancrackers.com",
+        "logo": "https://rajancrackers.com/assets/img/rajan.logo.jpg",
+        "image": "https://rajancrackers.com/assets/img/rajan.logo.jpg",
         "telephone": "+918925208343",
-        "email": "mahendranramar80@gmail.com",
+        "email": " mjkkalirajan880@gmail.com ",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "D.No:3/203/D Palammal Colony, Thayilpatti",
-            "addressLocality": "Sivakasi",
+            "streetAddress": "3/268/C, Sivakasi to Sattur Main Road, Chinnakamanpatti",
+            "addressLocality": "Virudhunagar",
             "addressRegion": "Tamil Nadu",
-            "postalCode": "626131",
+            "postalCode": "626189",
             "addressCountry": "IN"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 9.371407,
-            "longitude": 77.810753
+            "latitude": 9.410235,
+            "longitude": 77.859785
         },
         "priceRange": "₹30 - ₹50,000",
         "openingHoursSpecification": {
@@ -92,10 +92,10 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Rajan Crackers",
-        "url": "https://madhucrackers.com",
+        "url": "https://rajanucrackers.com",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://madhucrackers.com/?q={search_term_string}",
+            "target": "https://rajancrackers.com/?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -107,13 +107,13 @@
         "@context": "https://schema.org",
         "@type": "ItemList",
         "itemListElement": [
-            {"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://madhucrackers.com/"},
-            {"@type": "SiteNavigationElement", "position": 2, "name": "About Us", "url": "https://madhucrackers.com/about"},
-            {"@type": "SiteNavigationElement", "position": 3, "name": "FAQ", "url": "https://madhucrackers.com/faq"},
-            {"@type": "SiteNavigationElement", "position": 4, "name": "Blog", "url": "https://madhucrackers.com/blog"},
-            {"@type": "SiteNavigationElement", "position": 5, "name": "Contact", "url": "https://madhucrackers.com/contact"},
-            {"@type": "SiteNavigationElement", "position": 6, "name": "Privacy Policy", "url": "https://madhucrackers.com/privacy-policy"},
-            {"@type": "SiteNavigationElement", "position": 7, "name": "Price List", "url": "https://madhucrackers.com/pricelist"}
+            {"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://rajancrackers.com/"},
+            {"@type": "SiteNavigationElement", "position": 2, "name": "About Us", "url": "https://rajancrackers.com/about"},
+            {"@type": "SiteNavigationElement", "position": 3, "name": "FAQ", "url": "https://rajancrackers.com/faq"},
+            {"@type": "SiteNavigationElement", "position": 4, "name": "Blog", "url": "https://rajancrackers.com/blog"},
+            {"@type": "SiteNavigationElement", "position": 5, "name": "Contact", "url": "https://rajancrackers.com/contact"},
+            {"@type": "SiteNavigationElement", "position": 6, "name": "Privacy Policy", "url": "https://rajancrackers.com/privacy-policy"},
+            {"@type": "SiteNavigationElement", "position": 7, "name": "Price List", "url": "https://rajancrackers.com/pricelist"}
         ]
     }
     </script>

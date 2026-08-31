@@ -80,9 +80,27 @@ class ProductResource extends Resource
                 Select::make('unit')
                     ->label('Unit')
                     ->options([
-                        'box' => 'Box',
-                        'packet' => 'Packet',
-                        '1 Pcs' => '1 Pcs',
+                        '1Box' => '1Box',
+                        '1Pkt' => '1Pkt',
+                        '1Pcs' => '1Pcs',
+                        '1Pce' =>  '1Pce',
+                        '10Pcs/Box'=>'10Pcs/Box',
+                        '10Pcs/1Box'=>'10Pcs/1Box',
+                        '5Pcs/1Box'=>'5Pcs/1Box',
+                        '5Pcs/Tube'=>'5Pcs/Tube',
+                        '1Pce/Tube'=>'1Pce/Tube',
+                        '3Pcs/Box'=>'3Pcs/Box',
+                        '5Pcs/Box'=>'5Pcs/Box',
+                        '5Pieces'=>'5Pieces',
+                        '4Pcs/Box'=>'4Pcs/Box',
+                        '2Pcs/Box'=>'2Pcs/Box',
+                        '8Pcs'=>'8Pcs',
+                        '10PKT'=>'10PKT',
+                        '1Bundle'=>'1Bundle',
+                        '10Box'=>'10Box',
+                        
+
+
                     ])
                     ->required(),
 
