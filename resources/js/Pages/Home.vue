@@ -262,17 +262,17 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
                                 <p class="text-sm font-semibold text-brand-dark">{{ product.name }}</p>
                                 <p v-if="product.tamil_name" class="text-xs text-gray-400">{{ product.tamil_name }}</p>
                                 <div class="mt-1 flex items-center gap-2">
-                                    <span v-if="global_discount > 0" class="text-xs text-gray-400 line-through">₹{{ product.price }}</span>
-                                    <span :class="['text-sm font-bold', global_discount > 0 ? 'text-green-600' : 'text-brand-dark']">₹{{ global_discount > 0 ? finalPrice(product.price) : product.price }}</span>
-                                </div>
+                                  <span v-if="global_discount > 0 && category.category?.toLowerCase() !== 'gift box'" class="text-xs text-gray-400 line-through">₹{{ product.price }}</span>
+                                     <span :class="['text-sm font-bold', global_discount > 0 && category.category?.toLowerCase() !== 'gift box' ? 'text-green-600' : 'text-brand-dark']">₹{{ global_discount > 0 ? finalPrice(product.price) : product.price }}</span>
+                                  </div>
                             </div>
                             <!-- Desktop: even 4-column grid -->
-                            <div class="hidden sm:grid sm:items-center sm:gap-4" :style="global_discount > 0 ? 'grid-template-columns: 1fr 1fr auto auto' : 'grid-template-columns: 1fr 1fr auto'">
-                                <p class="text-base font-semibold text-brand-dark truncate">{{ product.name }}</p>
-                                <p class="text-sm text-gray-500 truncate">{{ product.tamil_name || '—' }}</p>
-                                <span :class="['text-base whitespace-nowrap', global_discount > 0 ? 'text-gray-400 line-through' : 'font-bold text-brand-dark']">₹{{ product.price }}</span>
-                                <span v-if="global_discount > 0" class="text-base font-bold text-green-600 whitespace-nowrap">₹{{ finalPrice(product.price) }}</span>
-                            </div>
+                            <div class="hidden sm:grid sm:items-center sm:gap-4" :style="(global_discount > 0 && category.category?.toLowerCase() !== 'gift box') ? 'grid-template-columns: 1fr 1fr auto auto' : 'grid-template-columns: 1fr 1fr auto'">
+                           <p class="text-base font-semibold text-brand-dark truncate">{{ product.name }}</p>
+                           <p class="text-sm text-gray-500 truncate">{{ product.tamil_name || '—' }}</p>
+                           <span :class="['text-base whitespace-nowrap', (global_discount > 0 && category.category?.toLowerCase() !== 'gift box') ? 'text-gray-400 line-through' : 'font-bold text-brand-dark']">₹{{ product.price }}</span>
+                           <span v-if="global_discount > 0 && category.category?.toLowerCase() !== 'gift box'" class="text-base font-bold text-green-600 whitespace-nowrap">₹{{ finalPrice(product.price) }}</span>
+                          </div>
                         </div>
                         <!-- Right: Image with ADD overlay -->
                         <div class="img-hover-zoom relative w-28 shrink-0 sm:w-32">
