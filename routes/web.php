@@ -63,13 +63,21 @@ Route::get('/admin/orders/{id}/print', [OrderController::class, 'printOrder'])->
 Route::get('/admin/orders/{id}/download', [OrderController::class, 'downloadOrder'])->name('admin.orders.download');
 Route::get('/admin/orders/bulk-download', [OrderController::class, 'bulkPdfDownload'])->name('orders.bulk-download');
 
-Route::get('/thankyou/{order}', function (Order $order) {
+Route::get('/thankyou/{order}', function (Order $order, \App\Settings\GeneralSettings $settings) {
+    $order->load('customer', 'items.product');
+
     return Inertia::render('Thankyou', [
         'orderId' => $order->id,
+        'customerName' => $order->customer->name,
+        'total' => $order->net_total,
+        'items' => $order->items->map(fn ($item) => [
+            'name' => $item->product->name,
+            'quantity' => $item->quantity,
+            'price' => $item->product->price,
+        ]),
+        'whatsappNumber' => $settings->mobile_number_1,
     ]);
 })->name('thankyou');
-
-
 
 
 Route::get('/about', function (GeneralSettings $settings) {
