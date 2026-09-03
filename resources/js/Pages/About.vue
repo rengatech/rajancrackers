@@ -15,34 +15,6 @@ const props = defineProps({
     mobile_number_5: Number,
 })
 
-const openFaq = ref(null)
-const toggleFaq = (index) => {
-    openFaq.value = openFaq.value === index ? null : index
-}
-
-const faqs = [
-    {
-        question: 'What is green cracker?',
-        answer: 'Green crackers are dubbed as \'eco-friendly\' crackers and are known to cause less air and noise pollution as compared to traditional firecrackers.',
-    },
-    {
-        question: 'How to identify "Green Crackers"?',
-        answer: 'SWAS - Safe Water Releaser: These crackers do not use sulphur or potassium nitrate, and thus release water vapour instead of certain key pollutants. STAR - Safe Thermite Cracker: Does not contain sulphur and potassium nitrate, has lower sound intensity. SAFAL - Safe Minimal Aluminium: Replaces aluminium content with magnesium and produces reduced levels of pollutants.',
-    },
-    {
-        question: 'Who certify "Green Crackers"?',
-        answer: 'CSIR-NATIONAL ENVIRONMENTAL ENGINEERING RESEARCH INSTITUTE (CSIR-NEERI).',
-    },
-    {
-        question: 'Can I buy fireworks?',
-        answer: 'You can\'t buy fireworks if you\'re under 18. If you\'re over 18 then you can buy fireworks from registered sellers during: 15th October - 10th November, 26th - 31st December, and 3 days before Diwali. For other dates, buy from a licensed shop.',
-    },
-    {
-        question: 'How are the colours in fireworks made?',
-        answer: 'The colours in fireworks are made from specific chemical compounds. For example, Strontium (Sr) or Lithium (Li) can make red when burnt. To make violet, you\'d need Potassium (K) or Rubidium (Rb).',
-    },
-]
-
 const features = [
     { title: 'Genuine Price', icon: 'receipt', key: 'genuine_price' },
     { title: 'Best Quality', icon: 'cube', key: 'best_quality' },
@@ -87,25 +59,25 @@ const features = [
         </Transition>
 
         <div class="mx-auto max-w-6xl px-4 py-8">
-            <!-- Breadcrumb -->
-            <nav class="mb-6 text-sm text-gray-400">
-                <a href="/" class="hover:text-brand-red">Home</a>
-                <span class="mx-2">/</span>
-                <span class="text-brand-dark">About Us</span>
-            </nav>
-
+           
             <!-- About Section -->
             <div v-for="about in about_page" :key="about.id" class="mb-12">
-                <div class="grid gap-8 lg:grid-cols-2">
+                <div class="grid gap-10 lg:grid-cols-2 items-center">
                     <!-- Text -->
                     <div>
-                        <h1 class="mb-4 font-heading text-3xl font-bold text-brand-dark">About Us</h1>
+                        <p class="text-brand-red font-semibold tracking-wide text-sm mb-2 uppercase">About Us</p>
+                        <h1 class="mb-4 font-heading text-3xl md:text-4xl font-bold text-brand-dark">
+                            Who We Are <span>👑</span>
+                        </h1>
                         <p class="leading-relaxed text-brand-gray">{{ about.about }}</p>
                     </div>
 
                     <!-- Image -->
-                    <div class="overflow-hidden rounded-xl">
-                        <img src="/assets/img/page-3.jpeg" alt="Rajan Crackers" class="h-full w-full object-cover" />
+                    <div class="flex justify-center">
+                        <div class="rounded-full p-1.5 bg-gradient-to-tr from-brand-red to-yellow-400 w-[300px] h-[300px] md:w-[350px] md:h-[350px] flex items-center justify-center">
+                            <img src="/assets/img/rajan.logo.jpg" alt="Rajan Crackers"
+                                 class="rounded-full w-full h-full object-cover" />
+                        </div>
                     </div>
                 </div>
 
@@ -129,52 +101,37 @@ const features = [
                         <p class="text-sm text-brand-gray">{{ about[feature.key] }}</p>
                     </div>
                 </div>
-            </div>
+                <!-- Categories Section -->
+                <div class="mt-16 text-center">
+                    <p class="text-brand-red font-semibold tracking-wide text-sm mb-2 uppercase">Products</p>
+                    <h2 class="mb-10 font-heading text-3xl font-bold text-brand-dark">Our Exclusive Categories</h2>
 
-            <!-- FAQ Section -->
-            <div class="mb-8">
-                <h2 class="mb-6 text-center font-heading text-2xl font-bold text-brand-dark">
-                    Frequently Asked Questions
-                </h2>
-                <div class="mx-auto max-w-3xl space-y-3">
-                    <div
-                        v-for="(faq, index) in faqs"
-                        :key="index"
-                        class="rounded-xl bg-white shadow-sm ring-1 ring-gray-100 overflow-hidden"
-                    >
-                        <button
-                            @click="toggleFaq(index)"
-                            class="flex w-full items-center justify-between px-5 py-4 text-left"
+                    <div class="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        <div v-for="category in [
+                                { name: 'One Sound Crackers', image: '/assets/img/one sound crackers.png' },
+                                { name: 'Sparklers', image: '/assets/img/sparklers.jpg' },
+                                { name: 'Flower Pots', image: '/assets/img/flower pots.jpg' },
+                                { name: 'Ground Chakker', image: '/assets/img/ground chakker.jpg' },
+                                { name: 'Rockets', image: '/assets/img/rockets.jpg' },
+                                { name: 'Kids fancy novelties', image: '/assets/img/kids fancy novelties.jpg' },
+                                { name: 'Gift box', image: '/assets/img/gift box.jpg' },
+                                { name: 'New arrivals', image: '/assets/img/new arrivals.jpg' },
+                            ]" :key="category.name"
+                            class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-md hover:-translate-y-1"
                         >
-                            <span class="text-sm font-medium text-brand-dark">{{ faq.question }}</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="2"
-                                stroke="currentColor"
-                                :class="['h-4 w-4 text-gray-400 transition-transform duration-200', openFaq === index ? 'rotate-180' : '']"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <Transition
-                            enter-active-class="transition duration-200 ease-out"
-                            enter-from-class="max-h-0 opacity-0"
-                            enter-to-class="max-h-96 opacity-100"
-                            leave-active-class="transition duration-150 ease-in"
-                            leave-from-class="max-h-96 opacity-100"
-                            leave-to-class="max-h-0 opacity-0"
-                        >
-                            <div v-if="openFaq === index" class="overflow-hidden">
-                                <p class="border-t px-5 py-4 text-sm leading-relaxed text-brand-gray">
-                                    {{ faq.answer }}
-                                </p>
+                            <div class="pt-6 pb-2 flex justify-center w-full">
+                                <img :src="category.image" :alt="category.name" class="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
-                        </Transition>
+                            <div class="pb-6 pt-2 text-center w-full px-2">
+                                <span class="inline-block rounded-full bg-red-50 px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium text-brand-red">
+                                    {{ category.name }}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </AppLayout>
 </template>
+            
